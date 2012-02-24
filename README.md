@@ -1,3 +1,7 @@
+It is the code of the former hitleshirado.com site. It is a PHP application based in Silex.
+
+Feel free to take it and get it up and running again.
+
 ## What do you need to get this up and running? ##
 
 - php
@@ -48,8 +52,11 @@ Write to info@hiteleshirado.com
 
 ## Can I take the domain as well? ##
 
-Yes, write to hiteleshirado.com.
+Yes, write to info@hiteleshirado.com.
 
 ## This is a really crappy code, isn't it? ##
 
-Yes, it is.
+Yes, it is. It countains some quick solutions, doesn't really scale, not tested and in general not something you would be prod of.
+The point was to get it working.
+
+Note the the vendor directory comtains code of external libraries. I did not have the time to put these to git submodules, so I jsut commit them as part of this repo.
