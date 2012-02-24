@@ -1,0 +1,18 @@
+<div class='img'>
+	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fhiteleshirado.com{{ path( 'screen', { 'filename': screen.getFilename } )|url_encode }}&amp;send=false&amp;layout=standard&amp;width=600&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80&amp;appId=230960920784" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:560px; height:80px;" allowTransparency="true"></iframe>
+	<a href='{{ path( 'screen', { 'filename': screen.getFilename } ) }}'>
+		<img title='{{ screen.getHeader }}' src='{{ cdn_url }}{{ path( 'image', { 'filename': screen.getFilename } ) }}' width='560' height='300' />
+	</a>
+	{% if '' != screen.getLink %}
+	<div class='link'>
+		Kapcsolódó link:
+		<a href='{{ screen.getLink }}' rel="nofollow" target="_blank">{{ screen.getLink }}</a>
+	</div>
+	{% endif %}
+	{% if screen.isAdministrable %}
+	<form class='delete' action="{{ path( 'delete' ) }}" method="post">
+		Mégsem tetszik? <input type='submit' value=' Töröld le! ' />
+		<input type='hidden' name='filename' value='{{ screen.getFilename }}' />
+	</form>
+	{% endif %}
+</div>

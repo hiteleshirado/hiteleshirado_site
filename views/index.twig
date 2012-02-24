@@ -1,0 +1,63 @@
+{% extends 'frame.twig' %}
+
+{% block body_id %}list{% endblock body_id %}
+
+{% block content %}
+{% include "form.twig" %}
+<div id='done'>
+	{% if 1 == screens.getPage %}
+		<h2>Legnépszerűbbek (legtöbb like)</h2>
+
+		<div id='toplist'>
+		{% for screen in toplist %}
+			{% if screen %}
+			<div class='{% if loop.index <= 2 %}podium{% elseif loop.index <= 5 %}middle{% else %}rest{% endif %}'>
+				<a href='{{ path( 'screen', { 'filename': screen.getFilename } ) }}'>
+					<img title='{{ screen.getHeader }}' src='{{ cdn_url }}{{ path( 'image', { 'filename': screen.getFilename } ) }}' />
+				</a>
+			</div>
+			{% endif %}
+		{% endfor %}
+			<br style="clear: both;" />
+			<p class='note'>Ide a tíz legtöbbet like-olt illetve Facebookon megosztott alkotás kerül ki. A statisztikák 2 óránként frissülnek. Az URL változása miatt a Facebook nem mindenhol mutatja a régi like-okat, de nyugi, ott vannak ;-)</p>
+		</div>
+	{% endif %}
+
+	{% if 1 == screens.getPage %}
+		<h2>Legutóbbiak</h2>
+	{% else %}
+		<h2>{{ screens.getPage }}. oldal</h2>
+	{% endif %}
+	<div id='list'>
+	{% for screen in screens %}
+		{% if screen %}
+		{% include "image.twig" with { 'screen': screen } %}
+		{% endif %}
+		{% if 1 == screens.getPage and 3 == loop.index %}
+			<div class='img'>
+				<div class='social_box'>
+					<div class="fb-like-box" data-href="http://www.facebook.com/pages/Hiteles-H%C3%ADrad%C3%B3/298979133487933" data-width="560" data-height="300" data-show-faces="true" data-stream="true" data-header="true"></div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+	</div>
+
+	<ul id='pagination'>
+	{% for page in range( 1, screens.getPages ) %}
+		<li {% if ( page + 5 ) < screens.getPage or ( page - 5 ) > screens.getPage %} style='display: none;' {% endif %}>
+			{% if page == screens.getPage %}
+				<strong>{{ page }}</strong>
+			{% else %}
+				<a title='{{ page }}. oldal' href={{ path( 'home', { 'page': page } ) }} {% if page == screens.getPage + 1 %}class='next'{% endif %}>
+					{{ page }}
+				</a>
+			{% endif %}
+		</li>
+	{% endfor %}
+		<li id='total'>Összesen: {{ screens.getPages }} oldal</li>
+	</ul>
+	<input id='page_number' type='hidden' value='{{ screens.getPage }}' />
+</div>
+
+{% endblock content %}

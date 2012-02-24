@@ -1,0 +1,39 @@
+{% extends 'frame.twig' %}
+
+{% block title %}{{ screen.getHeader }} - Hiteles Híradó{% endblock title %}
+
+{% block meta %}
+	<meta property="og:title" content="{{ screen.getHeader }}"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:url" content="http://hiteleshirado.com{{ path( 'screen', { 'filename': screen.getFilename } ) }}"/>
+	<meta property="og:image" content="http://hiteleshirado.com{{ path( 'image', { 'filename': screen.getFilename } ) }}"/>
+	<meta property="og:site_name" content="Hiteles Híradó"/>
+	<meta property="og:description"
+		  content="{{ screen.getTitle }} - kollegánk élőben jelenkezik, a helyszín {{ screen.getPlace }}. Szívügyunk a hiteles tájékoztatás."/>
+	<meta name="description"
+		  content="{{ screen.getTitle }} - kollegánk élőben jelenkezik, a helyszín {{ screen.getPlace }}. Szívügyunk a hiteles tájékoztatás."/>
+{% endblock meta %}
+
+{% block content %}
+
+{% if success is defined and success %}
+	<div id='success'>
+		<strong>Gratulálunk, kedves kollega, a riport elkészült!</strong>
+		Ha tetszik, oszd meg a Like gombbal, vagy az alábbi linkkel, <br/>
+		hogy bekerülhessen a Top 10-be! ;-)<br/>
+		<input disabled value="http://hiteleshirado.com{{ path( 'screen', { 'filename': screen.getFilename } ) }}" class='share_url' />
+	</div>
+{% endif %}
+<div id='done'>
+
+	<h2>{{ screen.getHeader }}</h2>
+	{% include "image.twig" with { 'screen': screen } %}
+
+</div>
+
+{% include "form.twig" %}
+
+<h2>Kommentek</h2>
+<div class="fb-comments" data-href="http://hiteleshirado.com{{ path( 'screen', { 'filename': screen.getFilename } ) }}" data-num-posts="2" data-width="600"></div>
+
+{% endblock content %}

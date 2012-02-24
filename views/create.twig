@@ -1,0 +1,20 @@
+{% extends 'frame.twig' %}
+
+{% block title %}Új riport - Hiteles Híradó{% endblock title %}
+
+{% block meta %}
+	<meta property="og:title" content="Új riport"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:url" content="http://hiteleshirado.com{{ path( 'create_form' ) }}"/>
+	<meta property="og:site_name" content="Hiteles Híradó"/>
+	<meta property="og:description"
+		  content="Új riport készítése"/>
+	<meta name="description"
+		  content="Új riport készítése"/>
+{% endblock meta %}
+
+{% block content %}
+
+{% include "form.twig" %}
+
+{% endblock content %}

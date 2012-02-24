@@ -1,0 +1,52 @@
+<h2>Új riport</h2>
+{% if auth_facebook.isLoggedIn %}
+<form class='upload' action="{{ path( 'create' ) }}" method="post" enctype="multipart/form-data">
+	<div class='loggedas'>
+		Bejelentkezve mint
+		<strong>{{ auth_facebook.getUserName }}</strong>
+		<a href="{{ path( 'facebook_logout' ) }}">[Kijelentkezés]</a>
+	</div>
+	<div class='rules'>
+		Szabályok: minden ér, tőlem még a pornó is, ha vicces. <strong>Egyedüli kivétel a pedofil tartalmú képek.</strong>
+		Minden ilyen egy jelentést eredményez a <strong>rendőrségnek</strong>.
+		A neved <strong>sehol nem jelenik meg</strong>, a Facebook login csak a spam es a visszaélések megelőzésére kell.
+	</div>
+	{% if flash is defined %}
+		<div id='error'>{{ flash }}</div>
+	{% endif %}
+	<div class='line'>
+		<label for="place">
+			Helyszín:
+		</label>
+		<input id="place" type="text" name="place" maxlength="50" />
+	</div>
+	<div class='legend'>A kép felsőbb sávjában megjelenő szöveg. Max 50 karakter.</div>
+	<div class='line'>
+		<label for="title">
+			Cím:
+		</label>
+		<input id="title" type="text" name="title" maxlength="37" />
+	</div>
+	<div class='legend'>A kép alsóbb sávjában megjelenő szöveg. Max 37 karakter.</div>
+	<div class='line'>
+		<label for="background">
+			Háttérkép:
+		</label>
+		<input id="background" type="file" name="background" />
+	</div>
+	<div class='legend'>A riport hátterét adó kép (JPEG vagy PNG). A kép kozépre igazítva, kilógó részeket levágva jelenik meg.</div>
+	<div class='line'>
+		<label for="link">
+			Kapcsolódó link (nem kötelező):
+		</label>
+		<input id="link" type="text" name="link" maxlength="250" /><br />
+	</div>
+	<div class='legend'>Az URL-je annak a cikknek, hírnek vagy weboldalnak, amihez a feltöltött kép kapcsolódik. A kép alatti kattintható linkként fog megjelenni.</div>
+	<input id="submit" type="submit" value=" Feltöltés " />
+</form>
+{% else %}
+<div class='signin'>
+	<a href="{{ path( 'facebook_login_dialog' ) }}">Lépj be Facebookkal, hogy új riportot készíthess! Katt ide!</a><br />
+	A neved sehol nem fog megjelenni. A belépéshez csak a spam es a visszaélések megelőzésére kell es harmadik személy nem jut hozzá az adatokhoz.
+</div>
+{% endif %}

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>{% block title %}Hiteles Híradó{% endblock title %}</title>
+
+		<meta property="fb:app_id" content="253079024760147"/>
+		{% block meta %}
+		<meta name="description" content="Oldalunkon a híradó legemlékezetesebb tudósításaiból láthatnak egy csokorra való gyűjteményt, mi több, Önok is felcsaphatnak riporternek. Szívügyünk a hiteles tájékoztatás." />
+		{% endblock meta %}
+
+		<link rel="stylesheet" type="text/css" href="/assets/css/main.css" media="screen" />
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ cdn_url }}/assets/js/jquery.infinitescroll.min.js"></script>
+		<script type="text/javascript" src="{{ cdn_url }}/assets/js/ui.js"></script>
+
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-28106566-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+	<body id="{% block body_id %}unknown{% endblock body_id %}">
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<div id='wrapper'>
+			<a id='contact' title='Contact' href='mailto:info@hiteleshirado.com'>Kontakt</a>
+			<div id='costs'>Az oldal fenntartása forgalomtól függően napi ~1500 Ft-ba kerül.</div>
+			<h1>
+
+				<a id='facebook' title='Facebook' href='http://www.facebook.com/pages/Hiteles-H%C3%ADrad%C3%B3/298979133487933' target='_blank'>&nbsp;</a>
+				<a id='twitter' title='Twitter' href='https://twitter.com/HitelesHirado' target='_blank'>&nbsp;</a>
+
+				<a title="Home" href="{{ path( 'home') }}">Hiteles Híradó</a>
+				<p>
+					Készítsd el saját hiteles híradós jeleneted! (Beta verzió!)
+				</p>
+			</h1>
+			<!-- <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fhiteleshirado.com&amp;send=false&amp;layout=standard&amp;width=600&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80&amp;appId=230960920784" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:600px; height:80px;" allowTransparency="true"></iframe> -->
+            {% block content %}
+            {% endblock content %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,325 @@
+body
+{
+	font-family: sans-serif;
+	text-align: center;
+	margin: 50px 10px 60px 10px;
+}
+
+h1
+{
+	background-image: url(/assets/img/hiteleshirado_logo.png);
+	background-repeat: no-repeat;
+	background-position: left center; /* not political... */
+	height: 82px;
+	line-height: 85px;
+	padding-left: 90px;
+	overflow: hidden;
+	margin: 0px;
+	margin-bottom: 50px;
+}
+
+h1 p
+{
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 15px;
+	color: #777;
+	position: relative;
+	top: -40px;
+}
+
+h1 a
+{
+	text-decoration: none;
+	color: black;
+}
+
+div#wrapper
+{
+	width: 600px;
+	text-align: left;
+	margin: 0px auto 0px auto;
+}
+
+form.upload
+{
+	padding: 10px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+}
+
+form.delete
+{
+	padding: 10px;
+	margin: 0px;
+}
+
+form.delete input
+{
+	border: 0px;
+	background-color: #efefef;
+	color: darkred;
+	font-size: 15px;
+}
+
+form.upload div.line
+{
+	clear: both;
+	height: 25px;
+}
+
+form.upload label
+{
+	width: 130px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+form.upload div.legend
+{
+	margin-left: 130px;
+	font-style: normal;
+	font-size: 11px;
+	padding-top: 5px;
+	color: #888;
+	line-height: 1em;
+	margin-bottom: 10px;
+}
+
+
+input#title, input#place, input#background, input#link
+{
+	width: 450px;
+	float: left;
+	height: 35px;
+	line-height: 30px;
+	margin-bottom: 5px;
+	color: #555;
+	font-size: 16px;
+}
+
+input#title, input#place, input#link
+{
+	padding: 0px 5px 0px 5px;
+}
+
+input#submit
+{
+	margin-top: 15px;
+	margin-left: 130px;
+	padding: 5px 10px;
+	font-size: 16px;
+}
+
+div.img
+{
+	padding: 20px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+div.img img
+{
+	margin-bottom: 10px;
+}
+
+a img
+{
+	border: 0px;
+}
+
+a#contact
+{
+	width: 600px;
+	display: block;
+	color: #aaa;
+	position: absolute;
+	top: 130px;
+	text-align: right;
+}
+
+div#costs
+{
+	width: 600px;
+	display: block;
+	color: #aaa;
+	position: absolute;
+	top: 20px;
+	text-align: right;
+	font-size: 11px;
+}
+
+
+ul#pagination
+{
+	margin: 0px;
+	list-style-type: none;
+	padding: 10px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	height: 30px;
+}
+
+ul#pagination li
+{
+	text-align: center;
+	float: left;
+	line-height: 30px;
+}
+
+ul#pagination li a, ul#pagination li strong
+{
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 0px 6px 0px 6px;
+}
+
+ul#pagination li#total {
+	padding: 0px 6px 0px 6px;
+	color: #aaa;
+}
+
+div#success
+{
+	padding: 10px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+div#success strong
+{
+	font-size: 20px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+div#error
+{
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: darkred;
+}
+
+div#toplist
+{
+	padding: 20px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+div#toplist div.podium, div#toplist div.rest, div#toplist div.middle
+{
+	float: left;
+	padding: 3px;
+}
+
+div#toplist div.podium img
+{
+	width: 273px;
+}
+
+div#toplist div.middle img
+{
+	width: 180px;
+}
+
+div#toplist div.rest img
+{
+	width: 105px;
+}
+
+div#toplist p.note
+{
+	font-size: 12px;
+	color: #777;
+}
+
+input.share_url
+{
+	border: 1px solid #aaa;
+	padding: 5px;
+	margin-top: 10px;
+	color: #black;
+	background-color: white;
+	width: 300px;
+	font-size: 11px;
+}
+
+div.social_box
+{
+	background-color: white;
+}
+
+a#twitter, a#facebook
+{
+	display: block;
+	float: right;
+	width: 42px;
+	height: 42px;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-top: 24px;
+}
+
+a#twitter
+{
+	background-image: url(/assets/img/social.png);
+	background-position: right bottom;
+}
+
+a#facebook
+{
+	background-image: url(/assets/img/social.png);
+	background-position: left bottom;
+}
+
+a#twitter:hover
+{
+	background-position: right top;
+}
+
+a#facebook:hover
+{
+	background-position: left top;
+}
+
+div.rules {
+	background-color: #e0e0e0;
+	font-size: 11px;
+	padding: 5px;
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+div.loggedas {
+	margin-bottom: 10px;
+}
+
+div.loggedas a {
+	text-decoration: none;
+	color: #aaa;
+}
+
+div.signin {
+	padding: 20px;
+	background-color: #efefef;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #aaa;
+}
+
+div.signin a {
+	text-decoration: none;
+	color: black;
+}
